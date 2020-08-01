@@ -1,0 +1,29 @@
+body {
+  background-color: #2a2826;
+  padding: 3px;
+  color: #00ffbfb6;
+  font-size: 100%;
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.box {
+  border-radius: 20px;
+  border: 2px solid #ff6600;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  padding: 20px;
+  max-width: 100%;
+  font-size: 30px;
+}
+
+#inner-div { 
+  text-align: center; 
+}
+#inner-div a { 
+  display: inline-block; 
+}
