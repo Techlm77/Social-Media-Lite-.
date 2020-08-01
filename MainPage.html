@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Main</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+
+        <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+        <meta charset="UTF-8">
+        <link rel="manifest" href="manifest.json">
+        <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase.js"></script>
+        <script src="config.js"></script>
+        <script src="common.js"></script>
+        <script src="firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="firebaseui.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth__en.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.css" />
+
+    </head>
+
+    <body>
+
+        <div class="desktop">
+
+            <nav class="navbar navbar-expand-lg text-white">
+                <div class="container-fluid">
+                    <ul class="nav navber-nav">
+                        <li class="active">
+                            <a class="navbar-brand" style="color: aliceblue; text-decoration-style: wavy;" href="https://techlm77.com/Art%20Galleries/Art%20collection.html">
+                                Static Page
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a class="nav-link" style="color: aliceblue; text-decoration-style: wavy;" onclick="switchView('home.html')">
+                                <span style="color: aliceblue;">Home</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a class="nav-link" style="color: aliceblue; text-decoration-style: wavy;" onclick="switchView('myblogs.html')">
+                                <span style="color: aliceblue;">My Post</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    
+            <div class="row h-100">
+                <div class="col-lg-0 bg-secondary">
+                    <ul class="nav flex-column">
+                      
+                    </ul>
+                </div>
+            
+                <div class="col-lg-12">
+                    <div class="container" id="container">
+    
+                    </div>
+                </div>
+            </div>
+            
+            <script src="js/index.js"></script>
+            <script>
+                firebase.auth().onAuthStateChanged(function(user)
+                {
+                    if(!user)
+                    {
+                        window.location.href = "signin.html";
+                    }
+                });
+            </script>
+        </div>
+
+    </body>
+</html>
